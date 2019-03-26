@@ -2,47 +2,63 @@
     <head>
         <title>Test</title>
         <link rel="stylesheet" href="main.css">
+        <style>
+                #step1 img {
+                  margin-left: -4px;
+                  margin: 10px 15px 15px 8px;
+                  height: 70px;
+                }
+                #step1 img:first-child {
+                  margin-left: 0px;
+                }
+        </style>
     </head>
     <body>
-        <div>
-            <img src="image/logo.png" style="width: 450; padding-left: 100px; padding-left: 50px;">
-        </div>
-        <div style="padding: 60px 0 0 200px; height: 10vh; display: flex; align-items: center;">
-            <img src="image/01storeCategory/title.png" width="50%" alt="title"/>
-        </div>
-        <div id="step1" style="display: flex; flex-direction: column; justify-content: center; height: 900px; padding: 20 0 0 300px;">
-            <div style="left: 0%; ">
-                <img id="cata1" src="image/01storeCategory/01_1.png" width="250px" style="padding-bottom: 20px"/>
-                <img id="cata2" src="image/01storeCategory/02_1.png" width="200px" style="padding-left: 20px; padding-bottom: 20px"/>
+        <div style="height: 100vh; width: 100vw;">
+            <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;">
+                <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />
             </div>
-            <div>
-                <img id="cata3" src="image/01storeCategory/03_1.png" width="200px" style="padding-bottom: 20px"/>
-                <img id="cata4" src="image/01storeCategory/04_1.png" width="250px" style="padding-left: 20px; padding-bottom: 20px"/>
-                <img id="cata5" src="image/01storeCategory/05_1.png" width="250px" style="padding-left: 20px; padding-bottom: 20px"/>
+            <div style="padding: 35px 0 0 135px; height: 10vh; display: flex; align-items: center;">
+                <img src="image/01storeCategory/title.png" width="50%" alt="title" align="left" />
             </div>
-            <div>
-                <img id="cata6" src="image/01storeCategory/06_1.png" width="250px" style="padding-bottom: 20px"/>
-                <img id="cata7" src="image/01storeCategory/07_1.png" width="250px" style="padding-left: 20px; padding-bottom: 20px"/>
-                <img id="cata8" src="image/01storeCategory/08_1.png" width="200px" style="padding-left: 20px; padding-bottom: 20px"/>
+            <div style="height: 60vh;">
+                <app-main [step]="thisPage" [next]="nextPage">
+                    <div id="step1" style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 0 0 0 195px;">
+                        <div style="left: 0%;">
+                            <img id="cata1" src="image/01storeCategory/01_1.png" align="left" alt="1" />
+                            <img id="cata2" src="image/01storeCategory/02_1.png" align="left" alt="2" />
+                        </div>
+                        <div>
+                        <img id="cata3" src="image/01storeCategory/03_1.png" align="left" alt="3" />
+                        <img id="cata4" src="image/01storeCategory/04_1.png" align="left" alt="4" />
+                        <img id="cata5" src="image/01storeCategory/05_1.png" align="left" alt="5" />
+                        </div>
+                        <div>
+                            <img id="cata6" src="image/01storeCategory/06_1.png" align="left" alt="6" />
+                            <img id="cata7" src="image/01storeCategory/07_1.png" align="left" alt="7" />
+                            <img id="cata8" src="image/01storeCategory/08_1.png" align="left" alt="8" />
+                        </div>
+                        <div>
+                            <img id="cata9" src="image/01storeCategory/09_1.png" align="left" alt="9" />
+                            <img id="cata10" src="image/01storeCategory/10_1.png" align="left" alt="10" />
+                            <img id="cata11" src="image/01storeCategory/11_1.png" align="left" alt="11" />
+                        </div>
+                        <div>
+                            <img id="cata12" src="image/01storeCategory/12_1.png" align="left" alt="12" />
+                            <img id="cata13" src="image/01storeCategory/13_1.png" align="left" alt="13" />
+                        </div>
+                        <div>
+                            <img id="cata14" src="image/01storeCategory/14_1.png" align="left" alt="14" />
+                            <img id="cata15" src="image/01storeCategory/15_1.png" align="left" alt="15" />
+                        </div>
+                    </div>
+                </app-main>
             </div>
-            <div>
-                <img id="cata9" src="image/01storeCategory/09_1.png" width="250px" style="padding-bottom: 20px"/>
-                <img id="cata10" src="image/01storeCategory/10_1.png" width="200px" style="padding-left: 20px; padding-bottom: 20px"/>
-                <img id="cata11" src="image/01storeCategory/11_1.png" width="200px" style="padding-left: 20px; padding-bottom: 20px"/>
+            <div style="height: 5vh; padding: 0 30px 30px 0;">
+                <a href="customize/kanban-shape.html">
+                    <img src="image/next.png" height="100%" alt="next" align="right" />
+                </a>
             </div>
-            <div>
-                <img id="cata12" src="image/01storeCategory/12_1.png" width="300px" style="padding-bottom: 20px"/>
-                <img id="cata13" src="image/01storeCategory/13_1.png" width="250px" style="padding-left: 20px; padding-bottom: 20px"/>
-            </div>
-            <div>
-                <img id="cata14" src="image/01storeCategory/14_1.png" width="250px" style="padding-bottom: 20px"/>
-                <img id="cata15" src="image/01storeCategory/15_1.png" width="350px" style="padding-left: 20px; padding-bottom: 20px"/>
-            </div>
-        </div>
-        <div style="height: 5vh; padding: 0 30px 30px 0;">
-            <a href="_index.html">
-                <img src="image/next.png" height="100%" alt="next" style="padding-top: 150px; padding-left: 1100px"/>
-            </a>
         </div>
     </body>
 </html>

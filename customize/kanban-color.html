@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shopping</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('image/bg.png') repeat
+    }
+  </style>
+  <script type="text/javascript">
+      var point, eid;
+      function selectcolor(i){
+        if (point == null){
+        if (document.getElementById(i).alt == "1"){
+          document.getElementById(i).src="image/03kanbanColor/black_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_black.png";
+          point = i;
+        }
+        else if(document.getElementById(i).alt == "2"){
+          document.getElementById(i).src="image/03kanbanColor/white_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_white.png";
+          point = i;
+        }
+        else if(document.getElementById(i).alt == "3"){
+          document.getElementById(i).src="image/03kanbanColor/silver_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_silver.png";
+          point = i;
+        }
+        }
+        else if(point != null){
+          if (document.getElementById(i).alt == "1"){
+          document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
+          document.getElementById(i).src="image/03kanbanColor/black_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_black.png";
+          point = i;
+        }
+        else if(document.getElementById(i).alt == "2"){
+          document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
+          document.getElementById(i).src="image/03kanbanColor/white_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_white.png";
+          point = i;
+        }
+        else if(document.getElementById(i).alt == "3"){
+          document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
+          document.getElementById(i).src="image/03kanbanColor/silver_btn_2.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_silver.png";
+          point = i;
+        }
+        }
+      }
+  </script>
+</head>
+<body>
+  <div style="height: 84vh; width: 98vw;">
+  <a href="_index.html">
+  <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;">
+    <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />
+  </div>
+  </a>
+  <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
+    <img src="image/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+  </div>
+  <div style="height: 57vh;">
+    <app-main [step]="thisPage" [next]="nextPage">
+  <div id="step3" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100%; padding: 0 155px 0 155px;">
+    <img id="show_step3" src="image/03kanbanColor/oval_black.png" width="55%" alt="1">
+    <div id="step3_right" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 55%; margin-left: 30px;">
+      <img id="black_btn" src="image/03kanbanColor/black_btn_1.png" width="100%" alt="1" onclick="selectcolor(id)"/>
+      <img id="white_btn" src="image/03kanbanColor/white_btn_1.png" alt="2" onclick="selectcolor(id)"/>
+      <img id="silver_btn" src="image/03kanbanColor/silver_btn_1.png" alt="3" onclick="selectcolor(id)"/>
+    </div>
+  </div>
+</app-main>
+  </div>
+  <div style="height: 5vh; padding: 0 30px 30px 0;">
+    <a href="customize/font-family.html">
+      <img src="image/next.png" height="100%" alt="next" align="right" />
+    </a>
+  </div>
+</div>
+</body>
+<style>
+#step3_right img {
+	width: auto;
+	height: auto;
+	max-width: 50%;
+	max-height: 50%;
+  padding-top: 40px;
+}
+#step3_right img:first-child {
+  padding-top: 0px;
+}
+</style>
+</html>

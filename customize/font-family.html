@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shopping</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('image/bg.png') repeat
+    }
+  </style>
+  <script type="text/javascript">
+      var righta=1, lefta=1
+      function selectright(i){
+        if (righta == 4){
+          righta=1;
+          document.getElementById("prev_step4").src=i+righta+".png";
+          document.getElementById("step4_description").src=i+righta+"_btn.png";
+        }
+        else{
+          righta++;
+          document.getElementById("prev_step4").src=i+righta+".png";
+          document.getElementById("step4_description").src=i+righta+"_btn.png";
+        }
+      }
+      function selectleft(i){
+        if (lefta == 1){
+          lefta=4;
+          document.getElementById("prev_step4").src=i+lefta+".png";
+          document.getElementById("step4_description").src=i+lefta+"_btn.png";
+        }
+        else{
+          lefta--;
+          document.getElementById("prev_step4").src=i+lefta+".png";
+          document.getElementById("step4_description").src=i+lefta+"_btn.png";
+        }
+      }
+  </script>
+</head>
+<body>
+    <div style="height: 84vh; width: 98vw;">
+        <a href="_index.html">
+        <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;">
+          <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />
+        </div>
+        </a>
+        <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
+          <!--<img src="image/04fontFamily/title.png" width="50%" alt="title" align="left" />-->
+          <img src="image/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+        </div>
+        <div style="height: 57vh;">
+            <app-main [step]="thisPage" [next]="nextPage">
+                <div id="step4" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 80%; padding: 0 155px 0 155px;">
+                  <img id="image/04fontFamily/0" src="image/04fontFamily/left.png" width="15%" alt="prev" onclick="selectleft(id)"/>
+                  <div id="step4_show" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                    <img id="prev_step4" src="image/04fontFamily/01.png" width="55%" alt="show"/>     
+                  </div>
+                  <img id="image/04fontFamily/0" src="image/04fontFamily/right.png" width="15%" alt="next" onclick="selectright(id)"/>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; height: 15%;">
+                  <img id="step4_description" src="image/04fontFamily/01_btn.png" width="15%" alt="next">
+                </div>
+              </app-main>
+        </div>
+        <div style="height: 5vh; padding: 0 30px 30px 0;">
+          <a href="customize/kanban-style.html">
+            <img src="image/next.png" height="100%" alt="next" align="right" />
+          </a>
+        </div>
+      </div>
+</body>
+</html>

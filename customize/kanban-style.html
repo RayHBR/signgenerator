@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shopping</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('image/bg.png') repeat
+    }
+  </style>
+</head>
+<body>
+  <div style="height: 84vh; width: 98vw;">
+  <a href="_index.html">
+  <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;"> 
+    <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />  
+  </div>
+  </a>
+  <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
+    <!--<img src="image/05kanbanStyle/title.png" width="50%" alt="title" align="left" />-->
+    <img src="image/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+  </div>
+  <div style="height: 57vh;">
+    <app-main [step]="thisPage" [next]="nextPage">
+    <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80%;">
+        <img id="step5_show" src="image/05kanbanStyle/oval/帥勾體/A圖/帥勾1-左-橢圓黑-海鮮.png" width="50%" alt="show">
+    </div>
+</app-main>
+  </div>
+  <div style="height: 5vh; padding: 0 30px 30px 0;">
+    <a href="customize/finish.html">
+      <img src="image/next.png" height="100%" alt="next" align="right" />
+    </a>
+  </div>
+</div>
+</body>
+</html>

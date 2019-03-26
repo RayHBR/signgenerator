@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background: url('image/bg.png') repeat
+      background: url('assets/bg.png') repeat
     }
     #step2 img {
       width: 25%;
@@ -17,26 +17,24 @@
 </head>
 <body>
   <div style="height: 100vh; width: 100vw;">
-        <div>
-            <a href="_index.html">
-                <img src="image/logo.png" style="width: 450px; padding-left: 100px; padding-left: 50px;">
-            </a>
-        </div>
+  <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;">
+    <img src="assets/logo.png" alt="logo" height="70%" style="left:0%;" />
+  </div>
   <div style="padding: 35px 0 0 135px; height: 10vh; display: flex; align-items: center;">
-    <img src="image/02kanbanShape/title.png" width="50%" alt="title" align="left" />
+    <img src="assets/02kanbanShape/title.png" width="50%" alt="title" align="left" />
   </div>
   <div style="height: 60vh;">
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step2" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100%; padding: 0 55px 0 55px;">
-    <img id="shape1" src="image/02kanbanShape/01.png" alt="1">
-    <img id="shape2" src="image/02kanbanShape/02.png" alt="2">
-    <img id="shape3" src="image/02kanbanShape/03.png" alt="3">
+    <img id="shape1" src="assets/02kanbanShape/01.png" alt="1">
+    <img id="shape2" src="assets/02kanbanShape/02.png" alt="2">
+    <img id="shape3" src="assets/02kanbanShape/03.png" alt="3">
   </div>
 </app-main>
   </div>
   <div style="height: 5vh; padding: 0 30px 30px 0;">
-    <a href="_color.html">
-      <img src="image/next.png" height="100%" alt="next" align="right" />
+    <a href="customize/kanban-color.html">
+      <img src="assets/next.png" height="100%" alt="next" align="right" />
     </a>
   </div>
 </div>

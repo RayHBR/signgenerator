@@ -15,20 +15,28 @@
     }
   </style>
   <script type="text/javascript">
-      var point
+      var point, memory=new Array()
+      var result = JSON.parse(localStorage.getItem('store'));
+      console.log(result)
       function selectshape(i){
-        if (point == null){
+        if (point == null && i != "next"){
           document.getElementById(i).src=i+"2.png";
           point=i;
         }
-        else if(point == i){
+        else if(point == i && i != "next"){
           document.getElementById(i).src=i+"1.png";
           point=null;
         }
-        else if(point != null){
+        else if(point != null && i != "next"){
           document.getElementById(point).src=point+"1.png";
           document.getElementById(i).src=i+"2.png";
           point=i;
+        }
+        else if(i == "next"){
+        memory[0]=result[0];
+        memory[1]=document.getElementById(point).alt;
+        localStorage.setItem('store', JSON.stringify(memory));
+        window.location.href = "customize/kanban-color.html";
         }
       }
   </script>
@@ -46,15 +54,15 @@
   <div style="height: 57vh;">
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step2" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100%; padding: 0 55px 0 55px;">
-    <img id="image/02kanbanShape/01_" src="image/02kanbanShape/01_1.png" alt="1" onclick="selectshape(id)"/>
-    <img id="image/02kanbanShape/02_" src="image/02kanbanShape/02_1.png" alt="2" onclick="selectshape(id)"/>
-    <img id="image/02kanbanShape/03_" src="image/02kanbanShape/03_1.png" alt="3" onclick="selectshape(id)"/>
+    <img id="image/02kanbanShape/01_" src="image/02kanbanShape/01_1.png" alt="圓" onclick="selectshape(id)"/>
+    <img id="image/02kanbanShape/02_" src="image/02kanbanShape/02_1.png" alt="橢圓" onclick="selectshape(id)"/>
+    <img id="image/02kanbanShape/03_" src="image/02kanbanShape/03_1.png" alt="長方" onclick="selectshape(id)"/>
   </div>
 </app-main>
   </div>
   <div style="height: 5vh; padding: 0 30px 30px 0;">
     <a href="customize/kanban-color.html">
-      <img src="image/next.png" height="100%" alt="next" align="right" />
+      <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectshape(id)"/>
     </a>
   </div>
 </div>

@@ -13,6 +13,7 @@
   </style>
 </head>
 <body>
+  <button id="buttonn" type="button" onclick="fate()">我是按鈕</button>
   <div style="height: 84vh; width: 98vw;">
   <a href="_index.html">
   <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;"> 
@@ -20,13 +21,12 @@
   </div>
   </a>
   <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
-    <!--<img src="image/05kanbanStyle/title.png" width="50%" alt="title" align="left" />-->
-    <img src="image/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+    <img src="image/05kanbanStyle/title.png" width="50%" alt="title" align="left" />
   </div>
   <div style="height: 57vh;">
     <app-main [step]="thisPage" [next]="nextPage">
-    <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80%;">
-        <img id="step5_show" src="image/05kanbanStyle/oval/帥勾體/A圖/帥勾1-左-橢圓黑-海鮮.png" width="50%" alt="show">
+    <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 90%;">
+        <img id="step5_show" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-A.png" width="50%" alt="show">
     </div>
 </app-main>
   </div>
@@ -38,3 +38,8 @@
 </div>
 </body>
 </html>
+<script>
+    var result = JSON.parse(localStorage.getItem('store'));
+    console.log(result)
+      // document.getElementsById("step5_show").src = "image/05kanbanStyle/1/1/A.png"
+</script>

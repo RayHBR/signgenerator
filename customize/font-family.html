@@ -12,27 +12,78 @@
     }
   </style>
   <script type="text/javascript">
-      var righta=1, lefta=1
+      var righta=1, lefta=1, memory=new Array(),a
+      var result = JSON.parse(localStorage.getItem('store'));
+      console.log(result)
       function selectright(i){
-        if (righta == 4){
+        if (righta == 4 && i != "next"){
+          
           righta=1;
+          console.log(righta)
+          lefta = righta;
           document.getElementById("prev_step4").src=i+righta+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
         }
+        
+        else if(i == "next"){
+        memory[0]=result[0];
+        memory[1]=result[1];
+        memory[2]=result[2];
+        if (righta == 1){
+          memory[3]="福氣";
+        }
+        else if (righta == 2){
+          memory[3]="帥勾";
+        }
+        else if (righta == 3){
+          memory[3]="富貴";
+        }
+        else if (righta == 4){
+          memory[3]="閃電";
+        }
+        localStorage.setItem('store', JSON.stringify(memory));
+        window.location.href = "customize/kanban-style.html";
+        }
         else{
           righta++;
+          console.log(righta)
+          lefta = righta;
           document.getElementById("prev_step4").src=i+righta+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
         }
       }
       function selectleft(i){
-        if (lefta == 1){
+        if (lefta == 1 && i != "next"){
           lefta=4;
+          console.log(lefta)
+          righta = lefta;
           document.getElementById("prev_step4").src=i+lefta+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
         }
+        else if(i == "next"){
+        memory[0]=result[0];
+        memory[1]=result[1];
+        memory[2]=result[2];
+        if (lefta == 1){
+          memory[3]="福氣";
+        }
+        else if (lefta == 2){
+          memory[3]="帥勾";
+        }
+        else if (lefta == 3){
+          memory[3]="富貴";
+        }
+        else if (lefta == 4){
+          memory[3]="閃電";
+        }
+        
+        localStorage.setItem('store', JSON.stringify(memory));
+        window.location.href = "customize/kanban-style.html";
+        }
         else{
           lefta--;
+          console.log(lefta)
+          righta = lefta;
           document.getElementById("prev_step4").src=i+lefta+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
         }
@@ -47,8 +98,7 @@
         </div>
         </a>
         <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
-          <!--<img src="image/04fontFamily/title.png" width="50%" alt="title" align="left" />-->
-          <img src="image/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+          <img src="image/04fontFamily/title.png" width="50%" alt="title" align="left" />
         </div>
         <div style="height: 57vh;">
             <app-main [step]="thisPage" [next]="nextPage">
@@ -66,7 +116,7 @@
         </div>
         <div style="height: 5vh; padding: 0 30px 30px 0;">
           <a href="customize/kanban-style.html">
-            <img src="image/next.png" height="100%" alt="next" align="right" />
+            <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectright(id)"/>
           </a>
         </div>
       </div>

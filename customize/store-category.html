@@ -20,20 +20,25 @@
     }
   </style>
   <script type="text/javascript">
-      var point
+      var point, memory=new Array()
       function selectlogo(i){
-        if (point == null){
+        if (point == null && i != "next"){
           document.getElementById(i).src=i+"2.png";
           point=i;
         }
-        else if(point == i){
+        else if(point == i  && i != "next"){
           document.getElementById(i).src=i+"1.png";
           point=null;
         }
-        else if(point != null){
+        else if(point != null && i != "next"){
           document.getElementById(point).src=point+"1.png";
           document.getElementById(i).src=i+"2.png";
           point=i;
+        }
+        else if(i == "next"){
+          memory[0]=document.getElementById(point).alt;
+		   	  localStorage.setItem('store', JSON.stringify(memory));
+			    window.location.href = "customize/kanban-shape.html";
         }
       }
   </script>
@@ -52,38 +57,38 @@
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step1" style="display: flex; flex-direction: column; justify-content: center; align-self: center; height: 85%; padding: 6% 0 0 195px;">
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/01_" src="image/01storeCategory/01_1.png" align="left" alt="1" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/02_" src="image/01storeCategory/02_1.png" align="left" alt="2" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/01_" src="image/01storeCategory/01_1.png" align="left" alt="薑母鴨" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/02_" src="image/01storeCategory/02_1.png" align="left" alt="熱炒" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/03_" src="image/01storeCategory/03_1.png" align="left" alt="3" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/04_" src="image/01storeCategory/04_1.png" align="left" alt="4" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/05_" src="image/01storeCategory/05_1.png" align="left" alt="5" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/03_" src="image/01storeCategory/03_1.png" align="left" alt="海鮮" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/04_" src="image/01storeCategory/04_1.png" align="left" alt="羊肉爐" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/05_" src="image/01storeCategory/05_1.png" align="left" alt="臭豆腐" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/06_" src="image/01storeCategory/06_1.png" align="left" alt="6" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/07_" src="image/01storeCategory/07_1.png" align="left" alt="7" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/08_" src="image/01storeCategory/08_1.png" align="left" alt="8" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/06_" src="image/01storeCategory/06_1.png" align="left" alt="鹹酥雞" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/07_" src="image/01storeCategory/07_1.png" align="left" alt="蛇肉湯" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/08_" src="image/01storeCategory/08_1.png" align="left" alt="牛排" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/09_" src="image/01storeCategory/09_1.png" align="left" alt="9" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/10_" src="image/01storeCategory/10_1.png" align="left" alt="10" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/11_" src="image/01storeCategory/11_1.png" align="left" alt="11" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/09_" src="image/01storeCategory/09_1.png" align="left" alt="章魚燒" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/10_" src="image/01storeCategory/10_1.png" align="left" alt="剉冰" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/11_" src="image/01storeCategory/11_1.png" align="left" alt="果汁" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/12_" src="image/01storeCategory/12_1.png" align="left" alt="12" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/13_" src="image/01storeCategory/13_1.png" align="left" alt="13" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/12_" src="image/01storeCategory/12_1.png" align="left" alt="珍珠撞奶" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/13_" src="image/01storeCategory/13_1.png" align="left" alt="烤魷魚" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="image/01storeCategory/14_" src="image/01storeCategory/14_1.png" align="left" alt="14" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/15_" src="image/01storeCategory/15_1.png" align="left" alt="15" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/14_" src="image/01storeCategory/14_1.png" align="left" alt="烤玉米" onclick="selectlogo(id)"/>
+      <img id="image/01storeCategory/15_" src="image/01storeCategory/15_1.png" align="left" alt="大腸包小腸" onclick="selectlogo(id)"/>
     </div>
   </div>
 </app-main>
   </div>
   <div style="height: 5vh; padding: 0 30px 30px 0;">
     <a href="customize/kanban-shape.html">
-      <img src="image/next.png" height="100%" alt="next" align="right" />
+      <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectlogo(id)"/>
     </a>
   </div>
 </div>

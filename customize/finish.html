@@ -23,10 +23,6 @@
       <div style="height: 12vh; width: 100%; display: flex; flex-direction:column; align-items: center; justify-content: center;">
         <img src="image/99Finish/title.png" height="80%" alt="title" />
       </div>
-      <!--<div style="height: 45vh; display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-        結果圖
-      </div>-->
-      <!--暫時-->
       <div style="height: 50vh;">
           <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
               <img id="step5_show" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-A.png" width="50%" alt="show">
@@ -54,5 +50,8 @@
 </html>
 <script>
 var result = JSON.parse(localStorage.getItem('store'));
+document.getElementById("step5_show").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"左-"+result[4]+".png";
+document.getElementById("step5_show").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+result[4]+".png";
+document.getElementById("step5_show").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"右-"+result[4]+".png";
 console.log(result)
 </script>
